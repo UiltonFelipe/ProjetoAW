@@ -5,12 +5,16 @@
   font-family: Arial, sans-serif;
 }
 
+body {
+  background-color: #161616;
+}
+
 .navbar {
-  background: #161616;
+  background: #292929;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 40px;
+  padding: 25px 40px;
 }
 
 .navbar .logo {
@@ -36,3 +40,66 @@
 .navbar .links a:hover {
   color: #00c853;
 }
+
+/* Largura do campo: mude só este valor e a altura acompanha (proporção 7:10) */
+:root {
+  --campo-largura: 490px;
+}
+
+/* Layout: esquerda (card) | centro (campo) | direita (vazio) */
+.conteudo {
+  display: grid;
+  grid-template-columns: 1fr var(--campo-largura) 1fr;
+  gap: 20px;
+  align-items: start;
+  padding: 40px;
+}
+
+.card {
+  grid-column: 1;
+  justify-self: start;
+  background: #1f1f1f;
+  border: 2px solid #333;
+  border-radius: 12px;
+  padding: 24px;
+  width: 280px;
+}
+
+.titulo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.subtitulo {
+  font-size: 13px;
+  color: #999;
+  margin-bottom: 20px;
+}
+
+.campo {
+  grid-column: 2;
+  background-color: rgb(6, 167, 6);
+  width: var(--campo-largura);
+  aspect-ratio: 7 / 10;
+  border-radius: 15px;
+}
+
+/* Telas pequenas: empilha e centraliza */
+@media (max-width: 900px) {
+  .conteudo {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .card,
+  .campo {
+    grid-column: 1;
+    justify-self: center;
+  }
+}
+
+img {
+  height: 600px;
+ }
