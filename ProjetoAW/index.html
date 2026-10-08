@@ -1,29 +1,142 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="style.css">
-    <title>Monte seu Time</title>
+
+    <title>FutQuiz</title>
 </head>
+
 <body>
     <nav class="navbar">
-        <a href="#" class="logo">MONTE SEU TIME</a>
-        <a href="#" class="logo">☰</a>
+        <h2 class="titulo">FUTQUIZ</h2>
+        <p class="titulo">☰</p>
     </nav>
 
-    <div class="conteudo">
-        <div class="card">
-            <h2 class="titulo">Preencher escalação</h2>
-            <p class="subtitulo">Escolha um time para editar</p>
-        </div>
+    <div class="quiz">
 
-        <div class="campo">
-        <img
-            src="assets/assets/assets/campo.png"
-            alt="Foto de um campo de futebol"/>
-        </div>
+        <h1>QUIZ DE FUTEBOL</h1>
+
+        <p class="subtitulo">
+            Teste seus conhecimentos sobre futebol!
+        </p>
+
+        <form>
+
+            <div class="pergunta">
+
+                <h2>1. Qual seleção tem mais títulos da Copa do Mundo?</h2>
+
+                <input type="radio" name="q1" id="q1-a">
+                <label for="q1-a">Argentina</label>
+
+                <input type="radio" name="q1" id="q1-b">
+                <label for="q1-b">Brasil</label>
+
+                <input type="radio" name="q1" id="q1-c">
+                <label for="q1-c">Alemanha</label>
+
+                <input type="radio" name="q1" id="q1-d">
+                <label for="q1-d">Itália</label>
+
+                <p class="certo">✅ Correto! O Brasil tem 5 títulos.</p>
+                <p class="errado">❌ Essa não é a resposta correta.</p>
+
+            </div>
+            <div class="pergunta">
+
+                <h2>2. Em que ano aconteceu a primeira Copa do Mundo?</h2>
+
+                <input type="radio" name="q2" id="q2-a">
+                <label for="q2-a">1922</label>
+
+                <input type="radio" name="q2" id="q2-b">
+                <label for="q2-b">1930</label>
+
+                <input type="radio" name="q2" id="q2-c">
+                <label for="q2-c">1938</label>
+
+                <input type="radio" name="q2" id="q2-d">
+                <label for="q2-d">1950</label>
+
+                <p class="certo">✅ Correto! A primeira Copa foi em 1930.</p>
+                <p class="errado">❌ Essa não é a resposta correta.</p>
+
+            </div>
+
+            <div class="pergunta">
+
+                <h2>3. Qual jogador é conhecido como "Rei do Futebol"?</h2>
+
+                <input type="radio" name="q3" id="q3-a">
+                <label for="q3-a">Pelé</label>
+
+                <input type="radio" name="q3" id="q3-b">
+                <label for="q3-b">Ronaldo</label>
+
+                <input type="radio" name="q3" id="q3-c">
+                <label for="q3-c">Neymar</label>
+
+                <input type="radio" name="q3" id="q3-d">
+                <label for="q3-d">Romário</label>
+
+                <p class="certo">✅ Correto! Pelé é conhecido como o Rei do Futebol.</p>
+                <p class="errado">❌ Essa não é a resposta correta.</p>
+
+            </div>
+
+            <div class="pergunta">
+
+                <h2>4. Qual jogador pode usar as mãos dentro da própria área?</h2>
+
+                <input type="radio" name="q4" id="q4-a">
+                <label for="q4-a">Atacante</label>
+
+                <input type="radio" name="q4" id="q4-b">
+                <label for="q4-b">Volante</label>
+
+                <input type="radio" name="q4" id="q4-c">
+                <label for="q4-c">Goleiro</label>
+
+                <input type="radio" name="q4" id="q4-d">
+                <label for="q4-d">Zagueiro</label>
+
+                <p class="certo">✅ Correto! O goleiro pode usar as mãos na própria área.</p>
+                <p class="errado">❌ Essa não é a resposta correta.</p>
+
+            </div>
+
+            <div class="pergunta">
+
+                <h2>5. O que significa receber um cartão amarelo?</h2>
+
+                <input type="radio" name="q5" id="q5-a">
+                <label for="q5-a">Advertência</label>
+
+                <input type="radio" name="q5" id="q5-b">
+                <label for="q5-b">Expulsão</label>
+
+                <input type="radio" name="q5" id="q5-c">
+                <label for="q5-c">Gol</label>
+
+                <input type="radio" name="q5" id="q5-d">
+                <label for="q5-d">Substituição obrigatória</label>
+
+                <p class="certo">✅ Correto! O cartão amarelo é uma advertência.</p>
+                <p class="errado">❌ Essa não é a resposta correta.</p>
+
+            </div>
+
+
+            <button type="reset">Jogar novamente</button>
+
+        </form>
 
     </div>
+
 </body>
+
 </html>
