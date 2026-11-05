@@ -4,139 +4,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="style.css">
-
     <title>FutQuiz</title>
 </head>
 
 <body>
     <nav class="navbar">
         <h2 class="titulo">FUTQUIZ</h2>
-        <p class="titulo">☰</p>
+        <div class="menu escondido" id="menu">
+            <button type="button" class="btn-menu" id="btn-categorias">Quizzes</button>
+            <button type="button" class="btn-menu" id="btn-loja">Loja</button>
+            <button type="button" class="btn-menu" id="btn-ranking">Ranking</button>
+            <span class="placar" id="placar-pontos">0 pts</span>
+        </div>
     </nav>
 
-    <div class="quiz">
+    <main class="quiz">
 
-        <h1>QUIZ DE FUTEBOL</h1>
-
-        <p class="subtitulo">
-            Teste seus conhecimentos sobre futebol!
-        </p>
-
-        <form>
-
-            <div class="pergunta">
-
-                <h2>1. Qual seleção tem mais títulos da Copa do Mundo?</h2>
-
-                <input type="radio" name="q1" id="q1-a">
-                <label for="q1-a">Argentina</label>
-
-                <input type="radio" name="q1" id="q1-b">
-                <label for="q1-b">Brasil</label>
-
-                <input type="radio" name="q1" id="q1-c">
-                <label for="q1-c">Alemanha</label>
-
-                <input type="radio" name="q1" id="q1-d">
-                <label for="q1-d">Itália</label>
-
-                <p class="certo">✅ Correto! O Brasil tem 5 títulos.</p>
-                <p class="errado">❌ Essa não é a resposta correta.</p>
-
+        <!-- TELA: INÍCIO -->
+        <section id="tela-inicio" class="tela">
+            <h1>QUIZ DE FUTEBOL</h1>
+            <p class="subtitulo">Teste seus conhecimentos sobre futebol!</p>
+            <div class="cartao">
+                <h2>Qual é o seu nome?</h2>
+                <input type="text" id="campo-nome" maxlength="15" placeholder="Digite seu nome">
+                <button type="button" id="btn-comecar">Começar</button>
             </div>
-            <div class="pergunta">
+        </section>
 
-                <h2>2. Em que ano aconteceu a primeira Copa do Mundo?</h2>
+        <!-- TELA: CATEGORIAS -->
+        <section id="tela-categorias" class="tela escondido">
+            <h1>Escolha um quiz</h1>
+            <p class="subtitulo" id="ola-jogador"></p>
+            <div class="bloco">
+                <h2>Destaques</h2>
+                <div class="grade" id="lista-categorias"></div>
+            </div>
+        </section>
 
-                <input type="radio" name="q2" id="q2-a">
-                <label for="q2-a">1922</label>
+        <!-- TELA: FASES -->
+        <section id="tela-fases" class="tela escondido">
+            <h1 id="titulo-categoria"></h1>
+            <p class="subtitulo">Acerte o mínimo de perguntas para liberar a próxima fase.</p>
+            <div class="grade" id="lista-fases"></div>
+            <button type="button" class="secundario" id="btn-voltar-categorias">Voltar</button>
+        </section>
 
-                <input type="radio" name="q2" id="q2-b">
-                <label for="q2-b">1930</label>
-
-                <input type="radio" name="q2" id="q2-c">
-                <label for="q2-c">1938</label>
-
-                <input type="radio" name="q2" id="q2-d">
-                <label for="q2-d">1950</label>
-
-                <p class="certo">✅ Correto! A primeira Copa foi em 1930.</p>
-                <p class="errado">❌ Essa não é a resposta correta.</p>
-
+        <!-- TELA: QUIZ -->
+        <section id="tela-quiz" class="tela escondido">
+            <div class="topo-quiz">
+                <span id="progresso"></span>
+                <span id="pontos-fase"></span>
             </div>
 
             <div class="pergunta">
-
-                <h2>3. Qual jogador é conhecido como "Rei do Futebol"?</h2>
-
-                <input type="radio" name="q3" id="q3-a">
-                <label for="q3-a">Pelé</label>
-
-                <input type="radio" name="q3" id="q3-b">
-                <label for="q3-b">Ronaldo</label>
-
-                <input type="radio" name="q3" id="q3-c">
-                <label for="q3-c">Neymar</label>
-
-                <input type="radio" name="q3" id="q3-d">
-                <label for="q3-d">Romário</label>
-
-                <p class="certo">✅ Correto! Pelé é conhecido como o Rei do Futebol.</p>
-                <p class="errado">❌ Essa não é a resposta correta.</p>
-
+                <h2 id="texto-pergunta"></h2>
+                <div id="opcoes"></div>
+                <p class="feedback escondido" id="feedback"></p>
             </div>
 
-            <div class="pergunta">
-
-                <h2>4. Qual jogador pode usar as mãos dentro da própria área?</h2>
-
-                <input type="radio" name="q4" id="q4-a">
-                <label for="q4-a">Atacante</label>
-
-                <input type="radio" name="q4" id="q4-b">
-                <label for="q4-b">Volante</label>
-
-                <input type="radio" name="q4" id="q4-c">
-                <label for="q4-c">Goleiro</label>
-
-                <input type="radio" name="q4" id="q4-d">
-                <label for="q4-d">Zagueiro</label>
-
-                <p class="certo">✅ Correto! O goleiro pode usar as mãos na própria área.</p>
-                <p class="errado">❌ Essa não é a resposta correta.</p>
-
+            <div class="itens-quiz">
+                <button type="button" class="item" id="btn-dica">Dica (<span id="qtd-dica">0</span>)</button>
+                <button type="button" class="item" id="btn-pular">Pular (<span id="qtd-pular">0</span>)</button>
+                <button type="button" class="item" id="btn-dobro">Dobro (<span id="qtd-dobro">0</span>)</button>
             </div>
 
-            <div class="pergunta">
+            <button type="button" id="btn-proxima" class="escondido">Próxima</button>
+        </section>
 
-                <h2>5. O que significa receber um cartão amarelo?</h2>
-
-                <input type="radio" name="q5" id="q5-a">
-                <label for="q5-a">Advertência</label>
-
-                <input type="radio" name="q5" id="q5-b">
-                <label for="q5-b">Expulsão</label>
-
-                <input type="radio" name="q5" id="q5-c">
-                <label for="q5-c">Gol</label>
-
-                <input type="radio" name="q5" id="q5-d">
-                <label for="q5-d">Substituição obrigatória</label>
-
-                <p class="certo">✅ Correto! O cartão amarelo é uma advertência.</p>
-                <p class="errado">❌ Essa não é a resposta correta.</p>
-
+        <!-- TELA: RESULTADO -->
+        <section id="tela-resultado" class="tela escondido">
+            <h1 id="titulo-resultado"></h1>
+            <div class="cartao">
+                <p id="texto-resultado"></p>
+                <button type="button" id="btn-proxima-fase" class="escondido">Próxima fase</button>
+                <button type="button" id="btn-repetir">Jogar novamente</button>
+                <button type="button" class="secundario" id="btn-resultado-voltar">Voltar aos quizzes</button>
             </div>
+        </section>
 
+        <!-- TELA: LOJA -->
+        <section id="tela-loja" class="tela escondido">
+            <h1>Loja</h1>
+            <p class="subtitulo">Troque seus pontos por itens.</p>
+            <div id="lista-loja"></div>
+        </section>
 
-            <button type="reset">Jogar novamente</button>
+        <!-- TELA: RANKING -->
+        <section id="tela-ranking" class="tela escondido">
+            <h1>Ranking</h1>
+            <p class="subtitulo">Pontos totais conquistados (não diminuem ao comprar).</p>
+            <div id="lista-ranking"></div>
+        </section>
 
-        </form>
+    </main>
 
-    </div>
-
+    <script src="script.js"></script>
 </body>
 
 </html>
